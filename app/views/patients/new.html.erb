@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TugasAkhir</title>
+  <link href = "aplication.css" rel="stylesheet" type="text/css"/>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style = "font-family:Arial;">
+<h2>Choose </h2>
+<%= form_for @patient do |p| %>
+  <div class="form-group">
+    <%= p.label :name_patient %>
+    <%= p.text_field :name_patient %>
+  </div>
+  <div class="form-group">
+    <%= p.label :address %>
+    <%= p.text_field :address %>
+  </div>
+  <div class="form-group">
+    <%= p.label :phone %>
+    <%= p.text_field :phone %>
+  </div>
+  <div class="form-group">
+    <%= p.label :email %>
+    <%= p.text_field :email %>
+  </div>
+  <div class="form-group">
+    <%= p.submit "Submit" %>
+  </div>
+ <% end %>
+</body>
+</html>

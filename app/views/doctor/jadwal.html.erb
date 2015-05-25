@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TugasAkhir</title>
+  <link href = "aplication.css" rel="stylesheet" type="text/css"/>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style = "font-family:Arial;">
+<table>
+	<tr>
+		<th>Spesialis</th>
+		<th>Nama Dokter</th>
+		<th>Hari Praktek</th>
+		<th>Waktu</th>
+	</tr>
+	<% @doctor.each do |f| %>
+	<tr>
+		<td><%= f.Spesialis %></td>
+	</tr>
+	
+</table>
+<%= yield %>
+
+</body>
+</html>

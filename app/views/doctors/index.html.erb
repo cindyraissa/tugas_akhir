@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TugasAkhir</title>
+  <link href = "aplication.css" rel="stylesheet" type="text/css"/>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style = "font-family:Arial;">
+<div class = "dokter">
+<h2>Jadwal Praktek Dokter Sunrise Hospital</h2>
+<table class="tabel">
+	<tr>
+		<th>No.</th>
+		<th >Spesialis</th>
+		<th>Nama Dokter</th>
+		<th>Hari Praktek</th>
+		<th>Waktu</th>
+		<th>Nomor Antrian</th>
+	</tr>
+
+	<%@doctors.each do |f|%>
+	<tr>
+		<td><%= f.id %></td>
+		<td><%= f.spesialis %></td>
+		<td><%= f.name_doctor %></td>
+		<td><%= f.day %></td>
+		<td><%= f.time %></td>
+		<td><%= f.noAntrian %></td>
+		<%end%>
+	</tr>
+		</table>
+		</br>
+		</br>
+	
+<div class ="combo">
+	
+	<table>
+	
+	<%= form_for Patient.new do |p| %>
+
+	<tr>
+	<td><p style = "font-weight:bold;">Pilih Nomor Dokter</p></td>
+	
+	<td><select name = "Dokter">
+	<option value = "1">1</option>
+	<option value = "2">2</option>
+	<option value = "3">3</option>
+	<option value = "4">4</option>
+	<option value = "5">5</option>
+	<option value = "6">6</option>
+	<option value = "7">7</option>
+	<option value = "8">8</option>
+	<option value = "9">9</option>
+	<option value = "10">10</option>
+	<option value = "11">11</option>
+	<option value = "12">12</option>
+	<option value = "13">13</option>
+	<option value = "14">14</option>
+	<option value = "15">15</option>
+	<option value = "16">16</option>
+	</select></td> 
+
+	</tr>
+	<tr>
+
+  	<td>
+    	<%= p.label "Nama Pasien" %></td>
+    <td><%= p.text_field :name_patient %>
+    	
+    </td>
+ 	 
+ 	 </tr>
+  	<tr >
+    	<td><%= p.label "Alamat" %></td>
+    	<td><%= p.text_field :address %></td>
+ 	 </tr>
+  	<tr>
+    	<td><%= p.label "Telepon" %></td>
+    	<td><%= p.text_field :phone %></td>
+  	</tr>
+  	<tr>
+    	<td><%= p.label "Email" %></td>
+    	<td><%= p.text_field :email %></td>
+  	</tr>
+  	<tr>
+    	<td><%= p.submit "Daftar" %></td>
+  	</tr>
+ 	<% end %>
+	</table>
+</div>
+
+
+</body>
+</html>

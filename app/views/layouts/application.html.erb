@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TugasAkhir</title>
+  <link href = "aplication.css" rel="stylesheet" type="text/css"/>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style = "font-family:Arial;">
+<div class = "header">
+	<div class = "logo">
+		<p style="position:relative; left:0%">©2015 Sunrise Hospital</p>
+		<img class = "gambar" src = "/assets/hospital"/>
+		<p style="font-size:45px;color:orange;position:relative;left: 28%;text-transform: uppercase;letter-spacing: 0.1em;">Sunrise Hospital</p>
+	</div>
+</div>
+	<div class = "navigation">
+		<ul class="mynav">
+			<li><%= link_to "Home", patients_path %></li>
+			<li><%= link_to "Fasilitas", patients_Medic_path %>
+				
+				<ul class="navbar">
+					<li><%= link_to "Fasilitas Medis", patients_Medic_path, :class => "fa" %></li>
+					<li><%= link_to "Fasilitas Non-Medis",patients_nonMedic_path, :class => "fa" %></li>
+				</ul>				
+			</li>
+			<li><%= link_to "Registrasi", doctors_path() %></li>
+			<li><%= link_to "Contact Us", doctors_contact_path %></li>
+		</ul>
+	</div>
+
+
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TugasAkhir</title>
+  <link href = "aplication.css" rel="stylesheet" type="text/css"/>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body style = "font-family:Arial;">
+
+<h1>Registrasi Gagal</h1>
+<p style="padding-left:10px">Harap isi data diri dengan lengkap
+<br><%= link_to "Back", doctors_path %></p>
+
+</body>
+</html>
